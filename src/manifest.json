@@ -2,20 +2,30 @@
   "manifest_version": 3,
   "name": "GitCharge",
   "description": "Turbocharging your GitLab experience",
-  "background": { "service_worker": "background.bundle.js" },
+  "options_page": "options.html",
+  "background": { 
+    "scripts": ["background.bundle.js"],
+    "type": "module"
+  },
   "action": {
-    "default_icon": "gitChargeIconTransperent.png"
+    "default_icon": "gitChargeIconTransperentAddOn.png"
   },
   "icons": {
-    "16": "gitChargeIconTransperent.png",
-    "32": "gitChargeIconTransperent.png",
-    "48": "gitChargeIconTransperent.png",
-    "128": "gitChargeIconTransperent.png",
-    "64": "gitChargeIconTransperent.png"
+    "16": "gitChargeIconTransperentAddOn.png",
+    "32": "gitChargeIconTransperentAddOn.png",
+    "48": "gitChargeIconTransperentAddOn.png",
+    "128": "gitChargeIconTransperentAddOn.png",
+    "64": "gitChargeIconTransperentAddOn.png"
   },
   "version": "0.0.1",
 
   "host_permissions": ["<all_urls>"],
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "ajayextensionbiz@gmail.com"
+    }
+  },
 
   "content_scripts": [
     {
@@ -32,11 +42,11 @@
       "matches": ["<all_urls>"]
     }
   ],
- 
+
+
   "permissions": [
     "storage",
     "scripting",
     "declarativeNetRequest"
   ]
-
 }
