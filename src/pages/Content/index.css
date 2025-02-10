@@ -1,0 +1,27 @@
+*{
+    box-sizing: border-box;
+}
+
+#git-wrapper{
+    width: 0;
+    height: 0;
+    /* height: 100vh;
+    width: 400px;
+     position: absolute;
+     display: flex;
+     background-color: transparent;
+     left:-343px;
+    top:0;
+    transition: all 0.5s linear;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+    z-index: 2; */
+}
+
+
+
+#app-container:hover{
+    /* left:0; */
+}
+

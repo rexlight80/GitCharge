@@ -1,6 +1,39 @@
-import { printLine } from './modules/print';
+import React from 'react';
+import {createRoot} from 'react-dom/client';
+import {GlobalProvider} from './context/GlobalState'
 
-console.log('Content script works!');
-console.log('Must reload extension for modifications to take effect.');
+import Content from './Content';
+import './index.css';
+import { SettingsProvider } from './context/SettingsState';
 
-printLine("Using the 'printLine' function from the Print Module");
+const app = document.createElement('span');
+const body = document.querySelector('body');
+app.id = "git-wrapper";
+
+if(body) {
+    body.prepend(app);  
+}
+
+const container = document.getElementById('git-wrapper');
+const root = createRoot(container);
+
+
+root.render( 
+    <GlobalProvider>
+      <SettingsProvider>
+      <Content/>
+      </SettingsProvider>
+    </GlobalProvider>
+    );
+
+
+
+
+
+
+
+
+
+
+
+
